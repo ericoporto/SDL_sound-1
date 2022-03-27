@@ -26,7 +26,6 @@ jobs:
       with:
         path: /usr/local
         key: ${{ runner.os }}-deps
-
     - name: Setup MacOS dependencies
       if: runner.os == 'MacOS' && steps.cache-primes.outputs.cache-hit != 'true'
       run: |
