@@ -10,6 +10,7 @@ set(SDLSOUND_VERSION 2.0.1)
 # Increment this if/when we break backwards compatibility.
 set(SDLSOUND_SOVERSION 2)
 
+include(CMakePushCheckState)
 include(CheckSymbolExists)
 
 include_directories(src)
