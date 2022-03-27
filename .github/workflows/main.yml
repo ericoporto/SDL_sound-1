@@ -29,7 +29,7 @@ jobs:
     - name: Setup MacOS dependencies
       if: runner.os == 'MacOS' && steps.cache-primes.outputs.cache-hit != 'true'
       run: |
-        brew install -y sdl2 
+        brew install sdl2 
       
     - name: Get SDL_sound sources
       uses: actions/checkout@v2
