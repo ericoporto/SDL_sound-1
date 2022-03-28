@@ -40,7 +40,8 @@ if(WIN32)
     string(STRIP "${SDL2_LIBRARIES}" SDL2_LIBRARIES)
 endif()
 
-check_symbol_exists(SDL_exp "SDL.h" HAVE_SDL_EXP)
+set (CMAKE_REQUIRED_INCLUDES ${SDL2_INCLUDE_DIRS} ${SDL2_INCLUDE_DIR})
+check_symbol_exists(SDL_exp "SDL_stdinc.h" HAVE_SDL_EXP)
 
 if(UNIX AND NOT (WIN32 OR APPLE OR HAIKU OR EMSCRIPTEN))
     find_library(LIBM_LIBRARY m)
