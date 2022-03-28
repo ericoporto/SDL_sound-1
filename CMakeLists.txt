@@ -45,7 +45,7 @@ set (CMAKE_REQUIRED_INCLUDES ${SDL2_INCLUDE_DIRS} ${SDL2_INCLUDE_DIR})
 # check_symbol_exists(SDL_exp "SDL_stdinc.h" HAVE_SDL_EXP)
 check_prototype_definition("SDL_exp"
             "extern DECLSPEC double SDLCALL SDL_exp(double x)"
-            "1"
+            "-1"
             "SDL_stdinc.h"
             HAVE_SDL_EXP)
 
