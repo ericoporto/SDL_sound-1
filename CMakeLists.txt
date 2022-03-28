@@ -10,8 +10,9 @@ set(SDLSOUND_VERSION 2.0.1)
 # Increment this if/when we break backwards compatibility.
 set(SDLSOUND_SOVERSION 2)
 
-include(CMakePushCheckState)
-include(CheckSymbolExists)
+# include(CMakePushCheckState)
+# include(CheckSymbolExists)
+include(CheckPrototypeDefinition)
 
 include_directories(src)
 
@@ -41,7 +42,12 @@ if(WIN32)
 endif()
 
 set (CMAKE_REQUIRED_INCLUDES ${SDL2_INCLUDE_DIRS} ${SDL2_INCLUDE_DIR})
-check_symbol_exists(SDL_exp "SDL_stdinc.h" HAVE_SDL_EXP)
+# check_symbol_exists(SDL_exp "SDL_stdinc.h" HAVE_SDL_EXP)
+check_prototype_definition("SDL_exp"
+            "extern DECLSPEC double SDLCALL SDL_exp(double x)"
+            "1"
+            "SDL_stdinc.h"
+            HAVE_SDL_EXP)
 
 if(UNIX AND NOT (WIN32 OR APPLE OR HAIKU OR EMSCRIPTEN))
     find_library(LIBM_LIBRARY m)
