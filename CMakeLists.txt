@@ -2,7 +2,7 @@
 # fails, define SDL2_DIR environment variable to point to your SDL2
 # installation.
 
-cmake_minimum_required(VERSION 2.8.12)
+cmake_minimum_required(VERSION 3.0.2)
 
 project(SDL_sound C)
 set(SDLSOUND_VERSION 2.0.1)
